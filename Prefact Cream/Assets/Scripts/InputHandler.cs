@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    Emiter _emiter;
+    ParticleSystem creamDrops;
     private void Awake()
     {
-        _emiter = GetComponent<Emiter>();
+        creamDrops = GetComponent<ParticleSystem>();
+     
+
     }
 
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            _emiter.InitiateCream();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            Debug.Log("Flow Continue");
+            Debug.Log("PLay");
+           
+            creamDrops.Play();
         }
 
         if (Input.GetMouseButton(0))
         {
-            _emiter.StopFlow();
+            //creamDrops.Play();
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Debug.Log("stop");
+            creamDrops.Pause();
         }
     }
 }

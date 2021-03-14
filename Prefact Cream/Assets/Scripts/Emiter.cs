@@ -5,6 +5,8 @@ using UnityEngine;
 public class Emiter : MonoBehaviour
 {
     public GameObject Cream;
+
+    public GameObject currentCream;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,14 +15,16 @@ public class Emiter : MonoBehaviour
 
     public void InitiateCream()
     {
-        GameObject.Instantiate(Cream,transform.position,Quaternion.identity);
+        currentCream = GameObject.Instantiate(Cream,transform.position,Quaternion.identity,transform);
     }
 
+    public void ProduceCream()
+    {
+
+    }
     public void StopFlow()
     {
-        Debug.Log("End Flow");
-       //gameObject.GetComponentInChildren<Rigidbody>().useGravity = true;
-     
-        
+        Debug.Log(currentCream.gameObject.name.ToString());
+       
     }
 }

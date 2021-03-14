@@ -93,7 +93,7 @@ namespace SplineMesh {
                 // we fix the first segment so that the rope won't fall
                 if (i == 0) {
                     firstSegment = seg;
-                    segRB.constraints = RigidbodyConstraints.FreezePosition;
+                    //segRB.constraints = RigidbodyConstraints.FreezePosition;
                 }
 
                 // we attach the rigidbody to the joint of the previous segment
